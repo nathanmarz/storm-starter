@@ -7,7 +7,10 @@ try:
     json_encode = cjson.encode
     json_decode = lambda x: cjson.decode(x, all_unicode=True)
 except ImportError:
-    import json
+    try:
+        import json
+    except ImportError:
+        import simplejson as json
     json_encode = lambda x: json.dumps(x, ensure_ascii=False)
     json_decode = lambda x: json.loads(unicode(x))
 
