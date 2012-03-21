@@ -32,7 +32,7 @@ public class SingleJoinBolt extends BaseRichBolt {
     public void prepare(Map conf, TopologyContext context, OutputCollector collector) {
         _fieldLocations = new HashMap<String, GlobalStreamId>();
         _collector = collector;
-        long timeout = (Long) conf.get(Config.TOPOLOGY_MESSAGE_TIMEOUT_SECS);
+        int timeout = (Integer) conf.get(Config.TOPOLOGY_MESSAGE_TIMEOUT_SECS);
         _pending = new TimeCacheMap<List<Object>, Map<GlobalStreamId, Tuple>>((int) timeout, new ExpireCallback());
         _numSources = context.getThisSources().size();
         Set<String> idFields = null;
