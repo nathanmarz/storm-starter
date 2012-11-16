@@ -6,4 +6,6 @@ class SplitSentenceBolt(storm.BasicBolt):
         for word in words:
           storm.emit([word])
 
+        storm.ack(tup)
+
 SplitSentenceBolt().run()

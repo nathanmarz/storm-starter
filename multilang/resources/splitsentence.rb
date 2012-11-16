@@ -5,6 +5,7 @@ class SplitSentenceBolt < Storm::Bolt
     tup.values[0].split(" ").each do |word|
       emit([word])
     end
+    ack(tup)
   end
 end
 
