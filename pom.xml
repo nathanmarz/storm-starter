@@ -88,13 +88,6 @@
 	</dependencies>
 
 	<build>
-		<sourceDirectory>src/jvm</sourceDirectory>
-		<testSourceDirectory>test/jvm</testSourceDirectory>
-		<resources>
-			<resource>
-				<directory>${basedir}/multilang</directory>
-			</resource>
-		</resources>
 		<plugins>
 		    <!--
 		    bind the maven-assembly-plugin to the package phase
@@ -130,11 +123,6 @@
 				<artifactId>clojure-maven-plugin</artifactId>
 				<version>1.3.8</version>
 				<extensions>true</extensions>
-				<configuration>
-					<sourceDirectories>
-						<sourceDirectory>src/clj</sourceDirectory>
-					</sourceDirectories>
-				</configuration>
 				<executions>
 					<execution>
 						<id>compile</id>
