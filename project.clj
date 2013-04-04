@@ -1,6 +1,6 @@
 (defproject storm-starter "0.0.1-SNAPSHOT"
-  :source-paths ["src/clj"]
-  :java-source-paths ["src/jvm"]
+  :source-paths ["src/main/clojure"]
+  :java-source-paths ["src/main/java"]
   :resource-paths ["multilang"]
   :aot :all
   :repositories {
