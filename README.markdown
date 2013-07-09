@@ -28,6 +28,14 @@ lein compile
 lein run -m storm.starter.clj.word-count
 ```
 
+### To run a Scala example:
+
+```
+lein deps
+lein compile
+lein run -m storm.starter.scala.WordCountTopology
+```
+
 ## Maven
 
 Maven is an alternative to Leiningen. storm-starter contains m2-pom.xml which can be used with Maven using the -f option. For example, to compile and run `WordCountTopology` in local mode, use this command:
