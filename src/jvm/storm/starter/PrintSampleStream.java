@@ -1,4 +1,3 @@
-/*
 // to use this example, uncomment the twitter4j dependency information in the project.clj,
 // uncomment storm.starter.spout.TwitterSampleSpout, and uncomment this class
 
@@ -14,11 +13,16 @@ import storm.starter.bolt.PrinterBolt;
 
 public class PrintSampleStream {        
     public static void main(String[] args) {
-        String username = args[0];
-        String pwd = args[1];
+    	String consumerKey = args[0];
+    	String consumerSecret = args[1];
+    	String accessToken = args[2];
+    	String accessTokenSecret = args[3];
+    	String[] keyWords = Arrays.copyOfRange(arguments, 4, arguments.length);
+    	
         TopologyBuilder builder = new TopologyBuilder();
         
-        builder.setSpout("spout", new TwitterSampleSpout(username, pwd));
+        builder.setSpout("spout", new TwitterSampleSpout(consumerKey, 
+        consumerSecret, accessToken, accessTokenSecret, keyWords));
         builder.setBolt("print", new PrinterBolt())
                 .shuffleGrouping("spout");
                 
@@ -34,4 +38,3 @@ public class PrintSampleStream {
         cluster.shutdown();
     }
 }
-*/
