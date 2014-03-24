@@ -84,7 +84,7 @@
       </resource>
     </resources>
 
-	<pluginManagement>
+    <pluginManagement>
       <plugins>
         <!--
           Bind the maven-assembly-plugin to the package phase
