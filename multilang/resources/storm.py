@@ -4,12 +4,11 @@ import traceback
 from collections import deque
 
 try:
-    import simplejson as json
+    from simplejson import dumps as json_encode
+    from simplejson import loads as json_decode
 except ImportError:
-    import json
-
-json_encode = lambda x: json.dumps(x)
-json_decode = lambda x: json.loads(x)
+    from json import dumps as json_encode
+    from json import loads as json_decode
 
 #reads lines and reconstructs newlines appropriately
 def readMsg():
