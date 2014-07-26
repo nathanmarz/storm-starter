@@ -1,20 +1,25 @@
 (defproject storm-starter "0.0.1-SNAPSHOT"
-  :source-path "src/clj"
-  :java-source-path "src/jvm"
-  :javac-options {:debug "true" :fork "true"}
-  :resources-path "multilang"
+  :source-paths ["src/clj"]
+  :java-source-paths ["src/jvm"]
+  :test-paths ["test/jvm"]
+  :resource-paths ["multilang"]
   :aot :all
-  :jvm-opts ["-Djava.library.path=/usr/local/lib:/opt/local/lib:/usr/lib"]
   :repositories {
-                 "twitter4j" "http://twitter4j.org/maven2"
+;;                 "twitter4j" "http://twitter4j.org/maven2"
                  }
 
-  :dependencies [[org.clojure/clojure "1.2.0"]
-                 [org.clojure/clojure-contrib "1.2.0"]
-                 [org.twitter4j/twitter4j-core "2.2.5-SNAPSHOT"]
-                 [org.twitter4j/twitter4j-stream "2.2.5-SNAPSHOT"]
+  :dependencies [
+;;                 [org.twitter4j/twitter4j-core "2.2.6-SNAPSHOT"]
+;;                 [org.twitter4j/twitter4j-stream "2.2.6-SNAPSHOT"]
+                   [commons-collections/commons-collections "3.2.1"]
                  ]
 
-  :dev-dependencies [[storm "0.7.0-SNAPSHOT"]
-                     ])
-
+  :profiles {:dev
+              {:dependencies [[storm "0.9.0.1"]
+                              [org.clojure/clojure "1.4.0"]
+                              [org.testng/testng "6.8.5"]
+                              [org.easytesting/fest-assert-core "2.0M8"]
+                              [org.mockito/mockito-all "1.9.0"]
+                              [org.jmock/jmock "2.6.0"]]}}
+  :min-lein-version "2.0.0"
+  )
